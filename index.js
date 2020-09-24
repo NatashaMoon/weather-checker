@@ -1,27 +1,26 @@
-const inputHTML = (cityName, response) => {
-  return `<h1>Weather Checker</h1>
+const responseCard = document.getElementById("response-card");
+const submitClick = document.getElementsByClassName("submit-btn");
+
+inputHTML = (cityName, response) => {
+  const itemHTML = `<h1>Weather Checker</h1>
     <input type="text" class="city-input" placeholder="City Name">${cityName}
     <button type="button" class="submit-btn">Search</button>
     <div id="response">
     <p id="response-card">${response}</p>
     </div>`;
+  responseCard.innerHTML = itemHTML;
 };
-
-const responseCard = document.getElementById("response-card");
-const submitClick = document.getElementsByClassName("submit-btn");
 
 search = () => {
   fetch(
-    "api.openweathermap.org/data/2.5/weather?q={city name}&appid=bd943d476ec2ddd5df9f95265d3c70de"
-  )
-    .then((response) => response.json())
+    "api.openweathermap.org/data/2.5/weather?q=`${cityName}`&appid="
+  ).then((response) => response.json());
+  console.log(response);
     .then((data) => {
-      data.results = responseCard;
-      responseCard.innerHTML = `<p id="response-card">${response}</p>`;
+      let city = data;
+      JSON.parse(city);
     });
   btnClick = () => {
-    responseCard.addEventListener("click", () => search);
+    submitClick.addEventListener("click", city);
   };
 };
-
-console.log(responseCard);
