@@ -1,12 +1,11 @@
 const responseCard = document.getElementById("response-card");
-// const submitClick = document.getElementsByClassName("submit-btn");
 const formInput = document.getElementById("form-input");
 const inputBox = document.getElementById("city-input");
 
 formInput.addEventListener("submit", (event) => {
   event.preventDefault();
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${inputBox.value}&appid={api}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${inputBox.value}&&units=metric&appid={appid}`
   )
     .then((response) => response.json())
     .then((output) => {
@@ -22,5 +21,8 @@ formInput.addEventListener("submit", (event) => {
     </div>`;
       console.log(output);
       responseCard.innerHTML = itemHTML();
-    });
+    })
+    .catch();
+  const error = `<p><b>Invalid city name</b></p>`;
+  responseCard.innerHTML = error;
 });
