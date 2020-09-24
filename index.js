@@ -1,12 +1,11 @@
 const responseCard = document.getElementById("response-card");
-// const submitClick = document.getElementsByClassName("submit-btn");
 const formInput = document.getElementById("form-input");
 const inputBox = document.getElementById("city-input");
 
 formInput.addEventListener("submit", (event) => {
   event.preventDefault();
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${inputBox.value}&&units=metric&appid=531414e0e606edfa7bd0f4dedf03f367`
+    `https://api.openweathermap.org/data/2.5/weather?q=${inputBox.value}&&units=metric&appid={appid}`
   )
     .then((response) => response.json())
     .then((output) => {
