@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather checker app</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Weather Checker</h1>
-    <input type="text" class="city-input" placeholder="City Name">
-    <button type="button" class="submit-btn">Search</button>
+    <form id="form-input">
+      <input type="text" id="city-input" placeholder="City Name" />
+      <button type="submit" class="submit-btn">Search</button>
+    </form>
     <div id="response">
-        <p id="response-card"></p>
+      <p id="response-card"></p>
     </div>
-</body>
-<script src="index.js"></script>
+  </body>
+  <script src="index.js"></script>
 </html>
-
