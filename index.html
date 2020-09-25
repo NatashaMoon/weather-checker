@@ -24,19 +24,10 @@
             autocomplete="on"
             style="width: 19.8rem"
           />
-          <button
-            type="submit"
-            class="submit-btn btn-success"
-            data-toggle="collapse"
-            data-target="#collapseExample"
-            aria-expanded="false"
-            aria-controls="collapseExample"
-          >
-            Search
-          </button>
+          <button type="submit" class="submit-btn btn-success">Search</button>
         </form>
-        <div id="card-container">
-          <div class="card collapse" id="collapseExample" style="width: 24rem">
+        <div id="card-container" style="display: none">
+          <div class="card" style="width: 24rem">
             <div class="card-body" id="response-card">
               <h3 class="card-title"></h3>
               <h5></h5>
@@ -61,7 +52,10 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key={APIkey}&libraries=places"
+    ></script>
     <script src="index.js"></script>
   </body>
 </html>
