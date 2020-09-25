@@ -3,7 +3,7 @@ const formInput = document.getElementById("form-input");
 const inputBox = document.getElementById("city-input");
 
 const emojis = {
-  "01d": "☀️" 
+  "01d": "☀️",
   "02d": "⛅️",
   "03d": "☁️",
   "04d": "☁️",
@@ -23,6 +23,27 @@ const emojis = {
   "50n": "💨",
 };
 
+const backgroundColour = {
+  "01d": "#ffc028",
+  "02d": "#91d7ff",
+  "03d": "#dcecff",
+  "04d": "#dcecff",
+  "09d": "#7d9fb0",
+  "10d": "#7179a1",
+  "11d": "#3e4f58",
+  "13d": "#ccebf0",
+  "50d": "#97c2c2",
+  "01n": "#ffc028",
+  "02n": "#91d7ff",
+  "03n": "#dcecff",
+  "04n": "#dcecff",
+  "09n": "#7d9fb0",
+  "10n": "#7179a1",
+  "11n": "#3e4f58",
+  "13n": "#ccebf0",
+  "50n": "#97c2c2",
+};
+
 formInput.addEventListener("submit", (event) => {
   event.preventDefault();
   fetch(
@@ -30,7 +51,9 @@ formInput.addEventListener("submit", (event) => {
   )
     .then((response) => response.json())
     .then((output) => {
-      let emoji = emojis[output.weather[0].icon];
+      const colour = backgroundColour[output.weather[0].icon];
+      const emoji = emojis[output.weather[0].icon];
+      document.body.style.backgroundColor = colour;
       const itemHTML = (name, temp, feelsLike, description, emoji) =>
         `<div class="card" style="width: 18rem">
       <div class="card-body" id="response-card">
@@ -38,7 +61,7 @@ formInput.addEventListener("submit", (event) => {
         <h5>Temperature ${output.main.temp}</h5>
         <p class="card-text">Feels like ${output.main.feels_like}
         <br>
-        ${output.weather[0].description} ${emojis[output.weather[0].icon]}</p>
+        ${emojis[output.weather[0].icon]} ${output.weather[0].description}</p>
       </div>
     </div>`;
       console.log(output);
@@ -48,5 +71,3 @@ formInput.addEventListener("submit", (event) => {
   const error = `<p><b>Invalid city name</b></p>`;
   responseCard.innerHTML = error;
 });
-
-
