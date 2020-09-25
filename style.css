@@ -1,3 +1,25 @@
 body {
   background-color: rgb(81, 87, 82);
 }
+
+h1 {
+  color: white;
+}
+
+#container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+}
+
+#card-container {
+  padding-top: 2%;
+}
+
+.card-body {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}

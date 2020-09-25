@@ -15,15 +15,34 @@
   <body>
     <div id="container">
       <h1>Weather Checker</h1>
-      <form id="form-input">
-        <input type="text" id="city-input" placeholder="City Name" />
-        <button type="submit" class="submit-btn">Search</button>
-      </form>
-      <div class="card" style="width: 18rem">
-        <div class="card-body" id="response-card">
-          <h5 class="card-title"></h5>
-          <h3></h3>
-          <p class="card-text"></p>
+      <div id="form-container">
+        <form id="form-input">
+          <input
+            type="text"
+            id="city-input"
+            placeholder="City Name"
+            autocomplete="on"
+            style="width: 19.8rem"
+          />
+          <button
+            type="submit"
+            class="submit-btn btn-success"
+            data-toggle="collapse"
+            data-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            Search
+          </button>
+        </form>
+        <div id="card-container">
+          <div class="card collapse" id="collapseExample" style="width: 24rem">
+            <div class="card-body" id="response-card">
+              <h3 class="card-title"></h3>
+              <h5></h5>
+              <p class="card-text"></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -42,6 +61,10 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <!-- <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAztc54ugstTLkRTYM1kqvYziQIU-sdXWc&libraries=places"
+    ></script> -->
     <script src="index.js"></script>
   </body>
 </html>
